@@ -1,0 +1,27 @@
+[
+    {
+        "image_url":"assets/images/p6.jpeg",
+        "name":"Scarlett",
+        "username":"@scarlett"
+    },
+    {
+        "image_url":"assets/images/p7.jpeg",
+        "name":"Amelia",
+        "username":"@amelia"
+    },
+    {
+        "image_url":"assets/images/p8.jpg",
+        "name":"Alex",
+        "username":"@alex"
+    },
+    {
+        "image_url":"assets/images/p9.jpeg",
+        "name":"Sabastian",
+        "username":"@sabastian"
+    },
+    {
+        "image_url":"assets/images/p10.jpg",
+        "name":"Eliana",
+        "username":"@eliana"
+    }
+]

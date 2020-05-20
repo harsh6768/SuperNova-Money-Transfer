@@ -1,0 +1,26 @@
+[
+    {
+        "image_url":"assets/images/p6.jpeg",
+        "name":"Scarlett"
+    },
+    {
+        "image_url":"assets/images/p7.jpeg",
+        "name":"Amelia",
+        "is_in_network":true
+    },
+    {
+        "image_url":"assets/images/p8.jpg",
+        "name":"Alex",
+        "is_in_network":true
+    },
+    {
+        "image_url":"assets/images/p9.jpeg",
+        "name":"Sabastian",
+        "is_in_network":false
+    },
+    {
+        "image_url":"assets/images/p10.jpg",
+        "name":"Eliana",
+        "is_in_network":false
+    }
+]
