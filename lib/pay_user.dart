@@ -15,7 +15,7 @@ class _PayUserState extends State<PayUser> {
   var amount = '0';
   bool isContinueButtonClicked = false;
   var marginIndex = 1.9;
-  var stackBelowContainerIndex = 2.1;
+  // var stackBelowContainerIndex = 2.1;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,7 +29,7 @@ class _PayUserState extends State<PayUser> {
                 children: <Widget>[
                   Container(
                     // color: Color.fromRGBO(90, 85, 202, 1.0),
-                    height: MediaQuery.of(context).size.height / 1.2,
+                    height: MediaQuery.of(context).size.height / 1,
                     child: Column(
                       // crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -149,65 +149,344 @@ class _PayUserState extends State<PayUser> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: MediaQuery.of(context).size.height /
-                        stackBelowContainerIndex,
-                    width: MediaQuery.of(context).size.height,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(50.0),
-                        topLeft: Radius.circular(50.0),
-                      ),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 10.0,
-                          spreadRadius: 3.0,
-                          color: Colors.black12,
-                          offset: Offset(3.0, 3.0),
-                        )
-                      ],
-                    ),
-                    margin: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / marginIndex,
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        isContinueButtonClicked
-                            ? Container(
-                                margin: EdgeInsets.only(
-                                    left: 20, right: 20, top: 30.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                  isContinueButtonClicked
+                      ? Container(
+                          height: MediaQuery.of(context).size.height / 4.6,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(50.0),
+                              topLeft: Radius.circular(50.0),
+                            ),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 10.0,
+                                spreadRadius: 3.0,
+                                color: Colors.black12,
+                                offset: Offset(3.0, 3.0),
+                              )
+                            ],
+                          ),
+                          margin: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height / 1.3,
+                          ),
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                left: 20, right: 20, bottom: 40),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Row(
                                   children: <Widget>[
-                                    Row(
-                                      children: <Widget>[
-                                        Container(
-                                          width: 30,
-                                          height: 30,
-                                          margin: EdgeInsets.only(right: 8.0),
-                                          child: Image.asset(
-                                              'assets/images/venmo3.png'),
-                                        ),
-                                        Text(
-                                          'Venmo',
-                                          style: TextStyle(fontSize: 20),
-                                        )
-                                      ],
+                                    Container(
+                                      width: 30,
+                                      height: 30,
+                                      margin: EdgeInsets.only(right: 8.0),
+                                      child: Image.asset(
+                                          'assets/images/venmo3.png'),
                                     ),
-                                    Row(
-                                      children: <Widget>[
-                                        Text(
-                                          '\$ 103,54',
-                                          style: TextStyle(fontSize: 20),
+                                    Text(
+                                      'Venmo',
+                                      style: TextStyle(fontSize: 20),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '\$ 103,54',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 16.0),
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(
+                                          207,
+                                          207,
+                                          212,
+                                          0.5,
                                         ),
-                                        Container(
-                                          margin: EdgeInsets.only(left: 16.0),
-                                          height: 40,
-                                          width: 40,
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: IconButton(
+                                        iconSize: 15,
+                                        onPressed: () {},
+                                        icon: Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      : Container(
+                          height: MediaQuery.of(context).size.height / 2.1,
+                          width: MediaQuery.of(context).size.height,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(50.0),
+                              topLeft: Radius.circular(50.0),
+                            ),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 10.0,
+                                spreadRadius: 3.0,
+                                color: Colors.black12,
+                                offset: Offset(3.0, 3.0),
+                              )
+                            ],
+                          ),
+                          margin: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height / 1.9,
+                          ),
+                          child: Container(
+                            margin: EdgeInsets.only(left: 25.0, right: 25.0),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(top: 30.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '1'
+                                                : amount = '1';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '1',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '2'
+                                                : amount = '2';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '2',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '3'
+                                                : amount = '3';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '3',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 30.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '4'
+                                                : amount = '4';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '4',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '5'
+                                                : amount = '5';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '5',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '6'
+                                                : amount = '6';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '6',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 30.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '7'
+                                                : amount = '7';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '7',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '8'
+                                                : amount = '8';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '8',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '9'
+                                                : amount = '9';
+                                          });
+                                        },
+                                        child: Container(
+                                          height: 25,
+                                          width: 25,
+                                          child: Text(
+                                            '9',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 25.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '.'
+                                                : amount = '0';
+                                          });
+                                        },
+                                        child: Container(
+                                          margin: EdgeInsets.only(left: 6.0),
+                                          height: 35,
+                                          width: 35,
+                                          child: Text(
+                                            '.',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount = amount + '0'
+                                                : amount = '0';
+                                          });
+                                        },
+                                        child: Container(
+                                          margin: EdgeInsets.only(left: 8.0),
+                                          height: 35,
+                                          width: 35,
+                                          child: Text(
+                                            '0',
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          this.setState(() {
+                                            amount.compareTo('0') > 0
+                                                ? amount.substring(
+                                                    0, amount.length - 1)
+                                                : amount = '0';
+                                          });
+                                          print('>>>>>>>>>>>> $amount');
+                                        },
+                                        child: Container(
+                                          height: 35,
+                                          width: 35,
                                           decoration: BoxDecoration(
                                             color: Color.fromRGBO(
                                               207,
@@ -215,358 +494,95 @@ class _PayUserState extends State<PayUser> {
                                               212,
                                               0.5,
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(45.0),
+                                              bottomLeft: Radius.circular(45.0),
+                                              topRight: Radius.circular(20.0),
+                                              bottomRight:
+                                                  Radius.circular(20.0),
+                                            ),
                                           ),
-                                          child: IconButton(
-                                            iconSize: 15,
-                                            onPressed: () {},
-                                            icon: Icon(
-                                              Icons.arrow_forward_ios,
-                                              color: Colors.black,
+                                          child: Center(
+                                            child: IconButton(
+                                              iconSize: 20,
+                                              icon: Icon(
+                                                Icons.close,
+                                                color: Colors.black38,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              )
-                            : Container(
-                                margin:
-                                    EdgeInsets.only(left: 25.0, right: 25.0),
-                                child: Column(
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.only(top: 30.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '1'
-                                                    : amount = '1';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '1',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '2'
-                                                    : amount = '2';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '2',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '3'
-                                                    : amount = '3';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '3',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
                                       ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 30.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '4'
-                                                    : amount = '4';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '4',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '5'
-                                                    : amount = '5';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '5',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '6'
-                                                    : amount = '6';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '6',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 30.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '7'
-                                                    : amount = '7';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '7',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '8'
-                                                    : amount = '8';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '8',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '9'
-                                                    : amount = '9';
-                                              });
-                                            },
-                                            child: Container(
-                                              height: 25,
-                                              width: 25,
-                                              child: Text(
-                                                '9',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 25.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: <Widget>[
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '.'
-                                                    : amount = '0';
-                                              });
-                                            },
-                                            child: Container(
-                                              margin:
-                                                  EdgeInsets.only(left: 6.0),
-                                              height: 35,
-                                              width: 35,
-                                              child: Text(
-                                                '.',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount = amount + '0'
-                                                    : amount = '0';
-                                              });
-                                            },
-                                            child: Container(
-                                              margin:
-                                                  EdgeInsets.only(left: 8.0),
-                                              height: 35,
-                                              width: 35,
-                                              child: Text(
-                                                '0',
-                                                style: TextStyle(fontSize: 25),
-                                              ),
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              this.setState(() {
-                                                amount.compareTo('0') > 0
-                                                    ? amount.substring(
-                                                        0, amount.length - 1)
-                                                    : amount = '0';
-                                              });
-                                              print('>>>>>>>>>>>> $amount');
-                                            },
-                                            child: Container(
-                                              height: 35,
-                                              width: 35,
-                                              decoration: BoxDecoration(
-                                                color: Color.fromRGBO(
-                                                  207,
-                                                  207,
-                                                  212,
-                                                  0.5,
-                                                ),
-                                                borderRadius: BorderRadius.only(
-                                                  topLeft:
-                                                      Radius.circular(45.0),
-                                                  bottomLeft:
-                                                      Radius.circular(45.0),
-                                                  topRight:
-                                                      Radius.circular(20.0),
-                                                  bottomRight:
-                                                      Radius.circular(20.0),
-                                                ),
-                                              ),
-                                              child: Center(
-                                                child: IconButton(
-                                                  iconSize: 20,
-                                                  icon: Icon(
-                                                    Icons.close,
-                                                    color: Colors.black38,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                  isContinueButtonClicked
+                      ? Positioned(
+                          bottom: 5,
+                          right: 0,
+                          left: 0,
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              top: 30.0,
+                              left: 16.0,
+                              right: 16.0,
+                            ),
+                            width: MediaQuery.of(context).size.width,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(50, 50, 51, 1.0),
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Pay \$$amount',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
                                 ),
                               ),
-                        isContinueButtonClicked
-                            ? Container(
-                                margin: EdgeInsets.only(
-                                  top: 30.0,
-                                  left: 16.0,
-                                  right: 16.0,
-                                ),
-                                width: MediaQuery.of(context).size.width,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Color.fromRGBO(50, 50, 51, 1.0),
-                                  borderRadius: BorderRadius.circular(25.0),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Pay \$$amount',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
+                            ),
+                          ),
+                        )
+                      : Positioned(
+                          bottom: 5,
+                          left: 0,
+                          right: 0,
+                          child: InkWell(
+                            onTap: () {
+                              this.setState(() {
+                                isContinueButtonClicked =
+                                    !isContinueButtonClicked;
+                              });
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                top: 40.0,
+                                left: 16.0,
+                                right: 16.0,
+                              ),
+                              width: MediaQuery.of(context).size.width,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(50, 50, 51, 1.0),
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Continue',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
                                   ),
                                 ),
-                              )
-                            : InkWell(
-                                onTap: () {
-                                  this.setState(() {
-                                    isContinueButtonClicked =
-                                        !isContinueButtonClicked;
-                                    marginIndex = 1.3;
-                                    stackBelowContainerIndex = 4.4;
-                                  });
-                                },
-                                child: Container(
-                                  margin: EdgeInsets.only(
-                                    top: 40.0,
-                                    left: 16.0,
-                                    right: 16.0,
-                                  ),
-                                  width: MediaQuery.of(context).size.width,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromRGBO(50, 50, 51, 1.0),
-                                    borderRadius: BorderRadius.circular(25.0),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Continue',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              )
-                      ],
-                    ),
-                  ),
+                              ),
+                            ),
+                          ),
+                        ),
                 ],
               ),
             ],
