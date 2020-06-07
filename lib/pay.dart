@@ -19,9 +19,13 @@ class _PayPageState extends State<PayPage> {
             Navigator.of(context).pop();
           },
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            side:
-                BorderSide(color: Color.fromRGBO(50, 50, 51, 1.0), width: 4.0),
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
+            ),
+            side: BorderSide(
+              color: Color.fromRGBO(50, 50, 51, 1.0),
+              width: 4.0,
+            ),
           ),
           backgroundColor: Color.fromRGBO(50, 50, 51, 1.0),
           child: Container(
@@ -44,14 +48,18 @@ class _PayPageState extends State<PayPage> {
                     height: 40,
                     width: 40,
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(50, 50, 51, 1.0),
-                        borderRadius: BorderRadius.circular(10.0)),
+                      color: Color.fromRGBO(50, 50, 51, 1.0),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                     child: IconButton(
                       iconSize: 15,
                       onPressed: () {
-                        Navigator.pop(context);
+                        // Navigator.pop(context);
                       },
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   Container(
